@@ -14,29 +14,30 @@
 //    написати код, який запитує число у користувача і перевіряє, чи воно є простим (ділиться тільки на 1 і на себе). Використати цикл для перевірки всіх можливих дільників.
 // (задача не така проста, як може здатися на перший погляд)
 
-// let num1 = +prompt("Enter your number:");
+// let num1 = Number(prompt("Enter your number:"));
 // let arrDivisor = [];
 
-// for (let i = 1; i <= num1; i++) {
+// for (let i = 1; i <= Math.abs(num1); i++) {
 //     if (num1 % i === 0) {
 //       arrDivisor[arrDivisor.length] = i;
 //     }
-
 // }
 
-// if (num1 === 0 || num1 === 1) {
+
+// if (num1 === 0 || num1 === 1 || num1 === -1) {
 //     console.log(arrDivisor);
-//     alert(`${num1} is nor prime neither composite number. Enter natural number bigger than 2`)
-// } else if (arrDivisor.length <= 2 && num1 > 0 && num1 !== 1) {
+//     alert(`${num1} is nor prime neither composite number. Enter natural number bigger than 1`)
+// } else if ((arrDivisor.length <= 2 && arrDivisor.length > 0) && num1 !== 0 && num1 !== 1) {
 //     console.log(arrDivisor);
 //     alert(`${num1} is a prime number. The divisors of ${num1} are ${arrDivisor}`);
-// } else if (arrDivisor.length > 2 && num1 > 0 && num1 !== 1) {
+// } else if (arrDivisor.length > 2 && num1 !== 0 && num1 !== 1) {
 //     console.log(arrDivisor);
 //     alert(`${num1} is a composite number. The divisors of ${num1} are ${arrDivisor}`);
 // } else {
 //     console.log('Hello');
 //     alert(`Enter correct number`);
 // }
+// console.log(arrDivisor);
 // console.log(arrDivisor.length);
 
 
