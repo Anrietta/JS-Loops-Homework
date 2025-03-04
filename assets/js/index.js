@@ -1,161 +1,81 @@
-// 1. Вивести в консоль квадрати чисел від 1 до 10 (за допомогою циклу)
+// 1. Сума чисел.
+//    Написати цикл, який обчислює суму всіх чисел від 1 до 100 і виводить результат у консоль.
 
-
-
-// for (let i = 1; i <= 10; i++) {
-//     console.log(i*i);
-// }
-
-
-// let num = 1;
-// while (num <= 10) {
-//     console.log(num*num);
-//     num++;
-// }
-
-// let num = 1;
-// do {
-//     console.log(num*num);
-//     num++;
-// } while (num <= 10);
-
-
-// 2. Написати функцію, яка запитує через prompt пароль користувача, порівнює його з тим, який у неї збережений (захардкоджений у константі). Якщо пароль співпав - виводить на консоль “Ви успішно увійшли в систему”, якщо ні - продовжує запитувати пароль і перевіряти, поки не введуть правильно (за допомогою вічного цикла)
-
-// let userPassword = '';
-// const PASSWORD_PATTERN = 'aabbcc';
-
-// do {
-//     userPassword = String(prompt('Enter your password!'))
-// } while (userPassword !== PASSWORD_PATTERN)
-
-// console.log('You entered the system successfully');
-
-
-
-// 3. Обчислити сумму чисел від 1 до 100 і вивести її в консоль
-
+// let count = 0;
 // let sum = 0;
 
-// for (let i = 1; i <= 100; i++) {
-//     sum += i;
+// while (count <= 100) {
+//     sum += count;
+//     count++;
 // }
 // console.log(sum);
 
+// 2. Перевірка на просте число
+//    написати код, який запитує число у користувача і перевіряє, чи воно є простим (ділиться тільки на 1 і на себе). Використати цикл для перевірки всіх можливих дільників.
+// (задача не така проста, як може здатися на перший погляд)
 
-// 4. Вивести числа від 10 до 50, які кратні 5.
+// let num1 = +prompt("Enter your number:");
+// let arrDivisor = [];
 
-// for (let i = 10; i <= 50; i++) {
-//     if (i % 5 === 0) {
-//         console.log(i);
+// for (let i = 1; i <= num1; i++) {
+//     if (num1 % i === 0) {
+//         arrDivisor[arrDivisor.length] = i;
 //     }
+
 // }
+// console.log(arrDivisor);
+// alert(`The divisors of ${num1} are ${arrDivisor}`)
 
 
-// 5. Намалювати в консолі символами “*” трикутник заданого користувачем розміру
+// 3. Перевернуте число 
+//    Дано число n. Вивести його цифри у зворотному порядку без використання методів масивів (наприклад, для 12345 вивід має бути 54321).
 
-// *
-// **
-// ***
-// ****
-// *****
-// ******
+// let number = String(prompt('Enter your number:'));
+// let reverse = '';
 
+// for (let i = number.length - 1; i >= 0; i--) {
+//     reverse += number[i];
 
-// let userParam = Number(prompt('Enter a number :'));
-// let triangleBody = '';
-
-// for (let i = 1; i <= userParam; i++) {
-//     triangleBody += '*';
-//     console.log(triangleBody);
 // }
+// console.log(reverse);
 
 
 
-// 6. Намалювати пустий квадрат з діагоналлю (зліва зверху - до права низу)
 
-// let squareSides = 20;
+// 4. Завдання: Намалювати в консолі шахівницю заданого розміру, де:  
+// - Чорні клітинки позначені символом "■", білі — символом "□".  
+// - Розмір дошки задається користувачем і може бути будь-яким парним числом.  
+// - У центрі дошки має бути "ціль": символ "✪", оточений чорними та білими клітинками у правильному шаховому порядку.  
 
-// for (let i = 0; i < squareSides; i++) {
-//     let row = '';
 
-//     for (let j = 0 ; j < squareSides; j++) {
-//         if (
-//             i === 0 || 
-//             j === 0 || 
-//             i === squareSides - 1 || 
-//             j === squareSides - 1 || 
-//             i === j
-//         ) {
-//             row += 'X';
-//         } else {
-//             row += ' ';
+
+// let chessBoardSides = Number(prompt('Enter a countable number: '));
+// const center = chessBoardSides / 2;
+
+// if (chessBoardSides % 2 === 0) {
+//     for (let i = 1; i <= chessBoardSides; i++) {
+//         let row = '';
+    
+//         for (let j = 1; j <= chessBoardSides; j++) {
+//             if (((i % 2 === 0 && j % 2 === 0) || (i % 2 !== 0 && j % 2 !== 0)) && (i !== center || j !== center)) {
+//                 row += 'X';
+//             } else if (i === center && j === center) {
+//                 row += 'M';
+//               } else {
+//                 row += 'O';
+//             }
 //         }
+//         console.log(row);
+
 //     }
-//     console.log(row);
-// }
-
-// ------------------------------------------------------------
-
-// let squareSides = 20;
-
-// for (let i = 0; i < squareSides; i++) {
-//     let row = '';
-
-//     for (let j = 0 ; j < squareSides; j++) {
-//         row += (
-//             i === 0 || 
-//             j === 0 || 
-//             i === squareSides - 1 || 
-//             j === squareSides - 1 || 
-//             i === j                  
-//         ) ? 'X' : ' ';
-//     }
-
-//     console.log(row);
+// } else if (chessBoardSides % 2 === 1) {
+//     alert(`Number ${chessBoardSides} is not countable! Try again!`);
+// } else {
+//     alert(`Unknown symbols! Enter countable number, please!`);
 // }
 
 
 
-// 7. Задачка з *: Зробити квадрат зі зворотньою діагоналлю (з правого верхнього до лівого нижнього)
 
-// let squareSides = 20;
 
-// for (let i = 0; i < squareSides; i++) {
-//     let row = '';
 
-//     for (let j = 0 ; j < squareSides; j++) {
-//         if (
-//             i === 0 || 
-//             j === 0 || 
-//             i === squareSides - 1 || 
-//             j === squareSides - 1 || 
-//             i === (squareSides - 1) - j
-//         ) {
-//             row += 'X';
-//         } else {
-//             row += ' ';
-//         }
-//     }
-//     console.log(row);
-// }
-
-// -----------------------------------------------------------
-
-// let squareSides = 20;
-
-// for (let i = 0; i < squareSides; i++) {
-//     let row = '';
-
-//     for (let j = 0 ; j < squareSides; j++) {
-//         row += (
-//             i === 0 || 
-//             j === 0 || 
-//             i === squareSides - 1 || 
-//             j === squareSides - 1 || 
-//             i === (squareSides - 1) - j                
-//         ) ? 'X' : ' ';
-//     }
-
-//     console.log(row);
-// }
