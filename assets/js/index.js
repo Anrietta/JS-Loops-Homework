@@ -19,12 +19,25 @@
 
 // for (let i = 1; i <= num1; i++) {
 //     if (num1 % i === 0) {
-//         arrDivisor[arrDivisor.length] = i;
+//       arrDivisor[arrDivisor.length] = i;
 //     }
 
 // }
-// console.log(arrDivisor);
-// alert(`The divisors of ${num1} are ${arrDivisor}`)
+
+// if (num1 === 0 || num1 === 1) {
+//     console.log(arrDivisor);
+//     alert(`${num1} is nor prime neither composite number. Enter natural number bigger than 2`)
+// } else if (arrDivisor.length <= 2 && num1 > 0 && num1 !== 1) {
+//     console.log(arrDivisor);
+//     alert(`${num1} is a prime number. The divisors of ${num1} are ${arrDivisor}`);
+// } else if (arrDivisor.length > 2 && num1 > 0 && num1 !== 1) {
+//     console.log(arrDivisor);
+//     alert(`${num1} is a composite number. The divisors of ${num1} are ${arrDivisor}`);
+// } else {
+//     console.log('Hello');
+//     alert(`Enter correct number`);
+// }
+// console.log(arrDivisor.length);
 
 
 // 3. Перевернуте число 
