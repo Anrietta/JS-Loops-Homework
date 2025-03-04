@@ -58,11 +58,11 @@
     
 //         for (let j = 1; j <= chessBoardSides; j++) {
 //             if (((i % 2 === 0 && j % 2 === 0) || (i % 2 !== 0 && j % 2 !== 0)) && (i !== center || j !== center)) {
-//                 row += 'X';
+//                 row += '■';
 //             } else if (i === center && j === center) {
-//                 row += 'M';
+//                 row += '✪';
 //               } else {
-//                 row += 'O';
+//                 row += '□';
 //             }
 //         }
 //         console.log(row);
